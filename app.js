@@ -1,15 +1,12 @@
 const express = require('express')
 const app = express()
-const favicon = require('serve-favicon')
-const path = require('path')
-const port = process.env.PORT || 3000
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+
+const port = process.env.PORT || 5005
+const service = process.env.SERVICE || "SECTION"
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'))
+    res.status(200).send(`${service} on port ${port}`)
 });
 
-app.listen(port, () => {
-    console.log(`App listening on port ${port}`)
-})
+app.listen(port, () => console.log(`${service} on port ${port}`))
