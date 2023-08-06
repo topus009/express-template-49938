@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 
-const port = process.env.PORT || 5005
+const port = process.env.PORT || 3000
 const service = process.env.SERVICE || "SECTION"
 
 app.get('/', function(req, res) {
